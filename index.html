@@ -13,6 +13,52 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Navbar CSS UI Fixes for Mobile & Desktop */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-auth-outline, .btn-auth-solid {
+  white-space: nowrap; /* စာလုံးအောက်မဆင်းစေရန် */
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+.btn-auth-outline {
+  color: #10B981;
+  border: 1px solid #10B981;
+  background: transparent;
+}
+.btn-auth-solid {
+  color: #FFFFFF;
+  background: #10B981;
+  border: 1px solid #10B981;
+}
+.lang-btn {
+  background: transparent;
+  color: #8FA3BF;
+  border: 1px solid #1E3A5F;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .nav-actions {
+    margin-right: 8px;
+  }
+  .btn-auth-outline, .btn-auth-solid {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+</style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -21,34 +67,88 @@
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
   neXa
 </a>
+
 <div class="nav-links" id="navLinks">
-<a href="./index.html#home" data-i18n="nav_home">Home</a>
-<a href="./index.html#services" data-i18n="nav_services">Services</a>
-<a href="./index.html#solutions" data-i18n="nav_solutions">Solutions</a>
-<a href="./index.html#ai" data-i18n="nav_ai">AI</a>
-<a href="./index.html#projects" data-i18n="nav_projects">Projects</a>
-<a href="./index.html#pricing" data-i18n="nav_pricing">Pricing</a>
-<a href="./index.html#contact" data-i18n="nav_contact">Contact</a>
-<a href="./blog.html" data-i18n="nav_blog">Blog</a>
+  <a href="#home" data-i18n="nav_home">Home</a>
+  <a href="#services" data-i18n="nav_services">Services</a>
+  <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+  <a href="#ai" data-i18n="nav_ai">AI</a>
+  <a href="#projects" data-i18n="nav_projects">Projects</a>
+  <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <a href="./blog.html" data-i18n="nav_blog">Blog</a>
 </div>
-<div class="nav-actions" style="display:flex; gap:10px; align-items:center;">
+
+<div class="nav-actions">
   <button id="langToggle" class="lang-btn">EN | MM</button>
   <a href="./login.html" class="btn-auth-outline">Sign In</a>
   <a href="./signup.html" class="btn-auth-solid">Sign Up</a>
 </div>
+
 <button class="hamburger" id="hamburger" aria-label="Menu">
-<span></span><span></span><span></span>
+  <span></span><span></span><span></span>
 </button>
 </div>
 </nav>
 
+<!-- 1. Hero Section -->
 <section id="home" class="hero-section">
 <div class="container hero-container">
   <h1 data-i18n="hero_title">Build Faster. Create Smarter.</h1>
   <p data-i18n="hero_desc">AI-powered digital platform for web development, AI solutions, automation, cloud solutions, and digital services.</p>
   <div class="hero-cta">
-    <a href="./index.html#contact" class="btn-primary" data-i18n="hero_cta">Get Started</a>
+    <a href="#contact" class="btn-primary" data-i18n="hero_cta">Get Started</a>
   </div>
+</div>
+</section>
+
+<!-- 2. Services Section -->
+<section id="services" class="section">
+<div class="container">
+  <h2>Services</h2>
+  <div class="grid cards-grid">
+    <div class="card"><h3>Web Development</h3><p>Custom websites & web apps built with modern tech.</p></div>
+    <div class="card"><h3>AI Solutions</h3><p>Integrate intelligent AI models into your workflows.</p></div>
+    <div class="card"><h3>Automation</h3><p>Streamline business processes with custom bots & scripts.</p></div>
+    <div class="card"><h3>Cloud Solutions</h3><p>Scalable architecture & seamless cloud deployment.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- 3. AI Section -->
+<section id="ai" class="section">
+<div class="container">
+  <h2>AI Capabilities</h2>
+  <p>Empowering applications with next-gen artificial intelligence.</p>
+</div>
+</section>
+
+<!-- 4. Projects Section -->
+<section id="projects" class="section">
+<div class="container">
+  <h2>Featured Projects</h2>
+  <p>Our recent work and digital innovations.</p>
+</div>
+</section>
+
+<!-- 5. Pricing Section -->
+<section id="pricing" class="section">
+<div class="container">
+  <h2>Pricing Plans</h2>
+  <p>Flexible options for growing businesses.</p>
+</div>
+</section>
+
+<!-- 6. Contact Section -->
+<section id="contact" class="section">
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+    <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+    <div class="form-group"><textarea placeholder="Your Message" rows="4" required></textarea></div>
+    <button type="submit" class="btn-primary">Send Message</button>
+  </form>
 </div>
 </section>
 
