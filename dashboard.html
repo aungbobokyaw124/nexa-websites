@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neXa — Dashboard</title>
+<meta name="description" content="neXa user dashboard">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html#home">Home</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#ai">AI</a>
+<a href="index.html#contact">Contact</a>
+</div>
+<div class="nav-actions">
+<a href="index.html" class="get-started-btn" id="logoutBtn">Logout</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<section class="dashboard-section">
+<div class="container dashboard-container">
+<div class="dashboard-sidebar">
+<h3>Dashboard</h3>
+<a href="#overview" class="dash-link active">Overview</a>
+<a href="#projects" class="dash-link">Projects</a>
+<a href="#services" class="dash-link">Services</a>
+<a href="#messages" class="dash-link">Messages</a>
+<a href="#settings" class="dash-link">Settings</a>
+</div>
+<div class="dashboard-main">
+<div class="dashboard-header">
+<h1>Welcome Back</h1>
+<p>Manage your projects and services</p>
+</div>
+<div class="dashboard-grid">
+<div class="dash-card"><h3>My Projects</h3><p>No projects yet</p></div>
+<div class="dash-card"><h3>Active Services</h3><p>No active services</p></div>
+<div class="dash-card"><h3>Messages</h3><p>No messages</p></div>
+<div class="dash-card"><h3>Requests</h3><p>No requests</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+const firebaseConfig={apiKey:"AIzaSyAPFtyR6CaesleHEwj3hC8Ziht9NwdxkLQ",authDomain:"chat-app-e379d.firebaseapp.com",projectId:"chat-app-e379d",storageBucket:"chat-app-e379d.firebasestorage.app",messagingSenderId:"1082025972243",appId:"1:1082025972243:web:73971b283640e4c1a5a5e6"};
+const app=initializeApp(firebaseConfig);const auth=getAuth(app);
+onAuthStateChanged(auth,(user)=>{if(!user){window.location.href='login.html'}});
+document.getElementById('logoutBtn').addEventListener('click',function(e){e.preventDefault();signOut(auth).then(()=>{window.location.href='index.html'}).catch(error=>{alert('Error: '+error.message)})});
+</script>
+</body>
+</html>
