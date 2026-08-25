@@ -1,0 +1,64 @@
+name: Apply neXa Navbar Logo
+
+on:
+  push:
+    paths:
+      - '.github/workflows/logo-update.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Replace navbar logo
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+          old = '<a href="#home" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>'
+          new = '<a href="#home" class="logo"><img src="favicon.svg" alt="neXa" class="logo-image"></a>'
+          if old not in s:
+              raise SystemExit('Navbar logo markup not found; no changes made.')
+          p.write_text(s.replace(old, new, 1))
+          PY
+
+      - name: Add logo sizing
+        run: |
+          cat > logo-fix.css <<'CSS'
+          .logo { display: inline-flex; align-items: center; }
+          .logo-image { width: 88px; height: 32px; display: block; object-fit: contain; object-position: left center; }
+          CSS
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+          marker = '<link rel="stylesheet" href="style.css">'
+          tag = '<link rel="stylesheet" href="logo-fix.css">'
+          if tag not in s:
+              s = s.replace(marker, marker + '\n' + tag, 1)
+          p.write_text(s)
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html logo-fix.css
+          git commit -m "Update navbar to neXa SVG logo"
+          git push
+
+      - name: Remove temporary workflow
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/workflows/logo-update.yml
+          git add -A
+          git commit -m "Remove temporary logo update workflow" || true
+          git push || true
