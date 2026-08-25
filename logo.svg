@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
+<defs>
+<linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#1727B8"/>
+<stop offset="50%" stop-color="#174FEA"/>
+<stop offset="100%" stop-color="#168BFF"/>
+</linearGradient>
+</defs>
+<path d="M90 300 V175 C90 125 125 95 175 95 C225 95 260 125 260 175 V300" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M310 205 H470 C470 140 430 105 380 105 C325 105 295 145 295 205 C295 260 330 300 385 300 C425 300 455 285 475 260" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M575 105 L725 255 Q745 275 725 295 L700 320 L525 145 Q505 125 525 105 L550 80 Q565 65 575 105Z" fill="url(#blue)"/>
+<path d="M760 80 Q760 65 775 65 H825 Q840 65 840 80 V130 Q840 145 825 145 H775 Q760 145 760 130Z" fill="url(#blue)"/>
+<path d="M535 275 Q535 260 550 260 H600 Q615 260 615 275 V325 Q615 340 600 340 H550 Q535 340 535 325Z" fill="url(#blue)"/>
+<path d="M1000 205 C1000 145 965 105 910 105 C855 105 820 145 820 205 C820 260 855 300 910 300 C965 300 1000 260 1000 205Z" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round"/>
+<path d="M1000 205 V300" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round"/>
+</svg>
