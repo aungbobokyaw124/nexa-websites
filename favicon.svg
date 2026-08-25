@@ -1,4 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-<rect width="24" height="24" rx="4" fill="#0B1F3A"/>
-<path d="M5 19L19 5M19 5H9M19 5V15" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1536 748"
+     width="1536"
+     height="748">
+
+  <g fill="none"
+     stroke="#FFFFFF"
+     stroke-width="45"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- n -->
+    <path d="
+      M295 485
+      V390
+      C295 330 330 305 390 305
+      C450 305 485 340 485 400
+      V485
+    "/>
+
+    <!-- e outer -->
+    <path d="
+      M535 395
+      C535 335 580 300 635 300
+      C695 300 730 335 730 395
+      C730 445 690 470 635 470
+      H555
+    "/>
+
+    <!-- e middle -->
+    <path d="
+      M555 395
+      H720
+    "/>
+
+    <!-- a -->
+    <path d="
+      M1100 395
+      C1100 335 1135 300 1190 300
+      C1245 300 1280 335 1280 395
+      V485
+    "/>
+
+    <path d="
+      M1100 395
+      C1100 450 1135 485 1190 485
+      C1245 485 1280 450 1280 395
+    "/>
+
+  </g>
+
+  <!-- neXa blue symbol -->
+  <g fill="#1557E8">
+
+    <!-- main diagonal -->
+    <path d="
+      M805 290
+      Q825 265 850 285
+      L1010 445
+      Q1030 465 1010 490
+      L985 515
+      Q965 535 945 515
+      L790 355
+      Q770 335 790 310
+      Z
+    "/>
+
+    <!-- upper square -->
+    <path d="
+      M985 275
+      Q985 265 997 265
+      H1038
+      Q1050 265 1050 277
+      V318
+      Q1050 330 1038 330
+      H997
+      Q985 330 985 318
+      Z
+    "/>
+
+    <!-- lower square -->
+    <path d="
+      M790 460
+      Q790 450 802 450
+      H850
+      Q862 450 862 462
+      V510
+      Q862 522 850 522
+      H802
+      Q790 522 790 510
+      Z
+    "/>
+
+  </g>
+
 </svg>
