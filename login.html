@@ -36,7 +36,7 @@
 <form id="loginForm">
 <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="Your email" required></div>
 <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" placeholder="Your password" required></div>
-<div class="form-group forgot-row"><a href="forgot.html">Forgot Password?</a></div>
+<div class="form-group forgot-row"><a href="#">Forgot Password?</a></div>
 <button type="submit" class="btn-primary">Login</button>
 </form>
 <p class="auth-alt">Don't have an account? <a href="signup.html">Sign Up</a></p>
@@ -50,40 +50,18 @@
 </div>
 </footer>
 
-<!-- UI/Navigation Script -->
-<script src="script.js"></script>
-
-<!-- Firebase Authentication Script -->
+<script>
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+hamburger.addEventListener('click',()=>{navLinks.classList.toggle('active')});
+document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active')})});
+</script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAPFtyR6CaesleHEwj3hC8Ziht9NwdxkLQ",
-  authDomain: "chat-app-e379d.firebaseapp.com",
-  projectId: "chat-app-e379d",
-  storageBucket: "chat-app-e379d.firebasestorage.app",
-  messagingSenderId: "1082025972243",
-  appId: "1:1082025972243:web:73971b283640e4c1a5a5e6"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert('Login successful!');
-      window.location.href = 'dashboard.html';
-    })
-    .catch(error => {
-      alert('Error: ' + error.message);
-    });
-});
+const firebaseConfig={apiKey:"AIzaSyAPFtyR6CaesleHEwj3hC8Ziht9NwdxkLQ",authDomain:"chat-app-e379d.firebaseapp.com",projectId:"chat-app-e379d",storageBucket:"chat-app-e379d.firebasestorage.app",messagingSenderId:"1082025972243",appId:"1:1082025972243:web:73971b283640e4c1a5a5e6"};
+const app=initializeApp(firebaseConfig);const auth=getAuth(app);
+document.getElementById('loginForm').addEventListener('submit',function(e){e.preventDefault();const email=document.getElementById('email').value;const password=document.getElementById('password').value;signInWithEmailAndPassword(auth,email,password).then(()=>{alert('Login successful!');window.location.href='dashboard.html'}).catch(error=>{alert('Error: '+error.message)})});
 </script>
 </body>
 </html>
