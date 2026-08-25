@@ -1,104 +1,81 @@
-င<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>neXa — Build Faster. Create Smarter.</title>
-<meta name="description" content="neXa provides AI-powered web development, automation, cloud solutions, digital services, and technology solutions.">
+<title>neXa — Home</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:type" content="website">
-<meta property="og:title" content="neXa — Build Faster. Create Smarter.">
-<meta property="og:description" content="AI-powered technology ecosystem for modern digital solutions.">
-<meta property="og:url" content="https://aungbobokyaw.com">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="neXa — Build Faster. Create Smarter.">
-<meta name="twitter:description" content="AI-powered technology ecosystem for modern digital solutions.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn-blue-outline {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-blue-outline:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+.btn-blue-solid {
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-blue-solid:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+</style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
 <div class="container nav-container">
-<a href="#home" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>
+<a href="./index.html" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>
 <div class="nav-links" id="navLinks">
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#solutions">Solutions</a>
-<a href="#ai">AI</a>
-<a href="#projects">Projects</a>
-<a href="#pricing">Pricing</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a href="blog.html">Blog</a>
+<a href="./index.html#home">Home</a>
+<a href="./index.html#services">Services</a>
+<a href="./index.html#ai">AI</a>
+<a href="./index.html#contact">Contact</a>
 </div>
-<div class="nav-actions">
-<button class="lang-btn" id="langToggle" aria-label="Change language">EN | MM</button>
+<!-- Sign In & Sign Up buttons next to menu -->
+<div class="auth-buttons">
+<a href="./login.html" class="btn-blue-outline">Sign In</a>
+<a href="./signup.html" class="btn-blue-solid">Sign Up</a>
 </div>
 <button class="hamburger" id="hamburger" aria-label="Menu">
 <span></span><span></span><span></span>
 </button>
+</div>
 </nav>
 
-<section class="hero" id="home">
-<div class="container hero-content">
-<div class="hero-left">
-<div class="status-badge"><span class="status-dot"></span><span>AI-Powered Digital Platform</span></div>
-<h1>Build Faster.<br>Create Smarter.</h1>
-<p class="hero-description">neXa brings AI, web development, automation, cloud solutions, and digital services together in one modern technology ecosystem.</p>
-<div class="hero-buttons"><a href="#services" class="btn-primary">Explore neXa</a><a href="#contact" class="btn-secondary">Get in Touch</a></div>
-</div>
-<div class="hero-right">
-<div class="hero-visual">
-<div class="hero-grid"></div>
-<div class="hero-center-node"><span>nX</span></div>
-<div class="hero-node node-1">AI</div>
-<div class="hero-node node-2">Web</div>
-<div class="hero-node node-3">Cloud</div>
-<div class="hero-node node-4">API</div>
-</div>
-</div>
-</div>
+<section id="home" class="hero-section" style="padding: 100px 20px; text-align: center;">
+<h1>Welcome to neXa</h1>
+<p>Your ultimate platform for AI and Web Solutions.</p>
 </section>
 
-<section class="stats">
-<div class="container stats-grid">
-<div class="stat-item"><span class="stat-number">01</span><span class="stat-label">AI-Powered Solutions</span></div>
-<div class="stat-item"><span class="stat-number">02</span><span class="stat-label">Digital Services</span></div>
-<div class="stat-item"><span class="stat-number">03</span><span class="stat-label">Web Projects</span></div>
-<div class="stat-item"><span class="stat-number">04</span><span class="stat-label">Automation Ready</span></div>
-</div>
-</section>
-
-<section class="services" id="services">
+<footer class="footer">
 <div class="container">
-<div class="section-header"><h2>Everything You Need to Build Digitally</h2><p>From websites and AI systems to automation and cloud solutions, neXa provides practical technology services designed for modern businesses and creators.</p></div>
-<div class="services-grid">
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 6L3 12L8 18M16 6L21 12L16 18" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Web Development</h3><p>Modern responsive websites, landing pages, business platforms, and web applications.</p><a href="#contact" class="learn-more">Learn More →</a></div>
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#10B981" stroke-width="2"/><path d="M12 8V16M8 12H16" stroke="#10B981" stroke-width="2" stroke-linecap="round"/></svg></div><h3>AI Solutions</h3><p>AI assistants, AI integrations, automation workflows, and intelligent digital experiences.</p><a href="#contact" class="learn-more">Learn More →</a></div>
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Automation</h3><p>Reduce repetitive work with practical workflow and business automation.</p><a href="#contact" class="learn-more">Learn More →</a></div>
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.5 19C19 19 20 18 20 16.5C20 15 19 14 17.5 14C16 14 15 15 15 16.5C15 18 16 19 17.5 19Z" stroke="#10B981" stroke-width="2"/><path d="M6.5 19C8 19 9 18 9 16.5C9 15 8 14 6.5 14C5 14 4 15 4 16.5C4 18 5 19 6.5 19Z" stroke="#10B981" stroke-width="2"/><path d="M9 16.5H15" stroke="#10B981" stroke-width="2"/><path d="M9 16.5L5 7H2" stroke="#10B981" stroke-width="2" stroke-linecap="round"/><path d="M15 16.5L19 7H22" stroke="#10B981" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Cloud Solutions</h3><p>Modern cloud infrastructure, deployment, APIs, storage, and scalable services.</p><a href="#contact" class="learn-more">Learn More →</a></div>
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9L12 3L21 9L12 15L3 9Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12L3 15L12 21L21 15L15 12" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Digital Services</h3><p>Digital products, business tools, online systems, and custom technology solutions.</p><a href="#contact" class="learn-more">Learn More →</a></div>
-<div class="service-card"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5C4 4.44772 4.44772 4 5 4H9C9.55228 4 10 4.44772 10 5V19C10 19.5523 9.55228 20 9 20H5C4.44772 20 4 19.5523 4 19V5Z" stroke="#10B981" stroke-width="2"/><path d="M14 9C14 8.44772 14.4477 8 15 8H19C19.5523 8 20 8.44772 20 9V19C20 19.5523 19.5523 20 19 20H15C14.4477 20 14 19.5523 14 19V9Z" stroke="#10B981" stroke-width="2"/></svg></div><h3>Education</h3><p>Practical technology learning focused on real-world digital skills.</p><a href="#contact" class="learn-more">Learn More →</a></div>
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
 </div>
-</div>
-</section>
-
-<section class="solutions" id="solutions">
-<div class="container">
-<div class="section-header"><h2>Technology Built Around Your Goal</h2></div>
-<div class="solutions-grid">
-<div class="solution-card"><h3>For Businesses</h3><p>Streamline operations with custom digital tools and automated workflows. Build internal systems, customer portals, and data dashboards.</p><a href="#contact" class="learn-more">Get Started →</a></div>
-<div class="solution-card"><h3>For Creators</h3><p>Build powerful online platforms and intelligent content systems. Create digital products, membership sites, and creator tools.</p><a href="#contact" class="learn-more">Get Started →</a></div>
-<div class="solution-card"><h3>For Developers</h3><p>Access modern APIs, cloud infrastructure, and development tools. Integrate AI capabilities into existing applications.</p><a href="#contact" class="learn-more">Get Started →</a></div>
-<div class="solution-card"><h3>For Online Services</h3><p>Create scalable web applications with integrated AI capabilities. Launch SaaS products, booking systems, and e-commerce platforms.</p><a href="#contact" class="learn-more">Get Started →</a></div>
-</div>
-</div>
-</section>
-
-<section class="ai-section" id="ai">
-<div class="container">
-<div class="section-header"><h2>Meet the neXa AI Ecosystem</h2><p>Intelligent tools designed to help users build, automate, learn, and work faster.</p></div>
-<div class="ai-grid">
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
 <div class="ai-card"><h3>neXa AI</h3><p>Core AI platform for intelligent digital solutions and custom AI integration.</p></div>
 <div class="ai-card"><h3>AI Assistant</h3><p>Smart assistance for business and creative workflows. Automate tasks, generate content, and improve productivity.</p></div>
 <div class="ai-card"><h3>AI Automation</h3><p>Automated processes powered by intelligent systems. Connect tools, trigger workflows, and reduce manual work.</p></div>
