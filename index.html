@@ -3,59 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>neXa — Home</title>
+<title>neXa — Build Faster. Create Smarter.</title>
+<meta name="description" content="neXa provides AI-powered web development, automation, cloud solutions, digital services, and technology solutions.">
+<meta property="og:title" content="neXa — Build Faster. Create Smarter.">
+<meta property="og:description" content="AI-powered digital platform for web development, AI solutions, automation, and cloud solutions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aungbobokyaw.com">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.btn-blue-outline {
-  background: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-blue-outline:hover {
-  background: rgba(37, 99, 235, 0.1);
-}
-.btn-blue-solid {
-  background: #2563eb;
-  color: #ffffff;
-  border: 2px solid #2563eb;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-blue-solid:hover {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-}
-</style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
 <div class="container nav-container">
-<a href="./index.html" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>
+<a href="./index.html" class="logo">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  neXa
+</a>
 <div class="nav-links" id="navLinks">
-<a href="./index.html#home">Home</a>
-<a href="./index.html#services">Services</a>
-<a href="./index.html#ai">AI</a>
-<a href="./index.html#contact">Contact</a>
+<a href="./index.html#home" data-i18n="nav_home">Home</a>
+<a href="./index.html#services" data-i18n="nav_services">Services</a>
+<a href="./index.html#solutions" data-i18n="nav_solutions">Solutions</a>
+<a href="./index.html#ai" data-i18n="nav_ai">AI</a>
+<a href="./index.html#projects" data-i18n="nav_projects">Projects</a>
+<a href="./index.html#pricing" data-i18n="nav_pricing">Pricing</a>
+<a href="./index.html#contact" data-i18n="nav_contact">Contact</a>
+<a href="./blog.html" data-i18n="nav_blog">Blog</a>
 </div>
-<!-- Sign In & Sign Up buttons next to menu -->
-<div class="auth-buttons">
-<a href="./login.html" class="btn-blue-outline">Sign In</a>
-<a href="./signup.html" class="btn-blue-solid">Sign Up</a>
+<div class="nav-actions" style="display:flex; gap:10px; align-items:center;">
+  <button id="langToggle" class="lang-btn">EN | MM</button>
+  <a href="./login.html" class="btn-auth-outline">Sign In</a>
+  <a href="./signup.html" class="btn-auth-solid">Sign Up</a>
 </div>
 <button class="hamburger" id="hamburger" aria-label="Menu">
 <span></span><span></span><span></span>
@@ -63,174 +42,18 @@
 </div>
 </nav>
 
-<section id="home" class="hero-section" style="padding: 100px 20px; text-align: center;">
-<h1>Welcome to neXa</h1>
-<p>Your ultimate platform for AI and Web Solutions.</p>
-</section>
-
-<footer class="footer">
-<div class="container">
-<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
-</div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
-<div class="ai-card"><h3>neXa AI</h3><p>Core AI platform for intelligent digital solutions and custom AI integration.</p></div>
-<div class="ai-card"><h3>AI Assistant</h3><p>Smart assistance for business and creative workflows. Automate tasks, generate content, and improve productivity.</p></div>
-<div class="ai-card"><h3>AI Automation</h3><p>Automated processes powered by intelligent systems. Connect tools, trigger workflows, and reduce manual work.</p></div>
-<div class="ai-card"><h3>AI-powered Web Tools</h3><p>Web applications enhanced with AI capabilities. Build intelligent forms, chatbots, and recommendation systems.</p></div>
-<div class="ai-card"><h3>AI Integrations</h3><p>Seamless integration with existing systems and APIs. Connect AI to your current tools and platforms.</p></div>
-</div>
-<div class="ai-cta"><a href="#contact" class="btn-primary">Explore AI Solutions</a></div>
-</div>
-</section>
-
-<section class="projects" id="projects">
-<div class="container">
-<div class="section-header"><h2>Built for Real Digital Work</h2></div>
-<div class="projects-grid">
-<div class="project-card"><div class="project-category">Web</div><h3>Modern Web Platform</h3><p>Responsive business platform with custom components, CMS integration, and performance optimization.</p><a href="#contact" class="project-link">Request Similar Project →</a></div>
-<div class="project-card"><div class="project-category">AI</div><h3>AI Integration System</h3><p>Intelligent assistant integrated with existing workflows. Custom AI solutions for business automation.</p><a href="#contact" class="project-link">Request Similar Project →</a></div>
-<div class="project-card"><div class="project-category">Automation</div><h3>Workflow Automation</h3><p>Automated business processes and task management. Connect tools, reduce errors, save time.</p><a href="#contact" class="project-link">Request Similar Project →</a></div>
-<div class="project-card"><div class="project-category">Cloud</div><h3>Cloud Infrastructure</h3><p>Scalable cloud deployment with API services. Modern architecture for growing applications.</p><a href="#contact" class="project-link">Request Similar Project →</a></div>
-</div>
-</div>
-</section>
-
-<section class="process" id="process">
-<div class="container">
-<div class="section-header"><h2>How It Works</h2></div>
-<div class="process-grid">
-<div class="process-step"><span class="step-number">01</span><h3>Discover</h3><p>Understand the problem and objective. We discuss your needs, goals, and requirements.</p></div>
-<div class="process-step"><span class="step-number">02</span><h3>Design</h3><p>Create the right digital solution. Plan architecture, design UI/UX, and define deliverables.</p></div>
-<div class="process-step"><span class="step-number">03</span><h3>Build</h3><p>Develop and integrate the required technology. Build, test, and iterate on your project.</p></div>
-<div class="process-step"><span class="step-number">04</span><h3>Launch</h3><p>Deploy, test, improve, and support. Launch your project and provide ongoing maintenance.</p></div>
-</div>
-</div>
-</section>
-
-<section class="why-nexa" id="about">
-<div class="container">
-<div class="section-header"><h2>Why neXa?</h2></div>
-<div class="why-grid">
-<div class="why-card"><h3>Practical Technology</h3><p>Solutions designed for real-world business needs and measurable results. No unnecessary complexity.</p></div>
-<div class="why-card"><h3>Modern Architecture</h3><p>Built with current technologies and scalable infrastructure. Future-proof your digital presence.</p></div>
-<div class="why-card"><h3>AI-Ready Solutions</h3><p>Prepared for AI integration and intelligent automation. Stay ahead with modern capabilities.</p></div>
-<div class="why-card"><h3>Built to Scale</h3><p>Designed to grow with your business and adapt to changes. Start small, scale fast.</p></div>
-</div>
-<div class="why-cta"><a href="#contact" class="btn-primary">Work With neXa</a></div>
-</div>
-</section>
-
-<section class="testimonials" id="testimonials">
-<div class="container">
-<div class="section-header"><h2>What Our Clients Say</h2><p>Feedback from businesses and creators we've worked with.</p></div>
-<div class="testimonials-grid">
-<div class="testimonial-card"><p>"Customer feedback will appear here."</p><div class="testimonial-author"><span>— Future Client</span></div></div>
-<div class="testimonial-card"><p>"Customer feedback will appear here."</p><div class="testimonial-author"><span>— Future Client</span></div></div>
-<div class="testimonial-card"><p>"Customer feedback will appear here."</p><div class="testimonial-author"><span>— Future Client</span></div></div>
-</div>
-</div>
-</section>
-
-<section class="pricing" id="pricing">
-<div class="container">
-<div class="section-header"><h2>Choose What You Need</h2><p>Flexible service options designed to match your project requirements and goals.</p></div>
-<div class="pricing-grid">
-<div class="pricing-card"><h3>STARTER</h3><p>For simple digital needs.</p><ul><li>Landing page</li><li>Responsive design</li><li>Basic setup</li><li>Deployment support</li></ul><a href="#contact" class="btn-secondary">Contact for Pricing</a></div>
-<div class="pricing-card featured"><h3>GROWTH</h3><p>For businesses and growing projects.</p><ul><li>Multi-page website</li><li>Custom components</li><li>Integrations</li><li>Automation options</li><li>Deployment</li></ul><a href="#contact" class="btn-primary">Contact for Pricing</a></div>
-<div class="pricing-card"><h3>CUSTOM</h3><p>For advanced requirements.</p><ul><li>Custom web applications</li><li>AI integration</li><li>Automation</li><li>Cloud architecture</li><li>Custom API</li><li>Ongoing development</li></ul><a href="#contact" class="btn-secondary">Contact for Pricing</a></div>
-</div>
-</div>
-</section>
-
-<section class="contact-section" id="contact">
-<div class="container">
-<div class="section-header"><h2>Get in Touch</h2><p>Tell us what you want to build, improve, or automate. We'll get back to you.</p></div>
-<div class="contact-grid">
-<div class="contact-info">
-<h3>Contact neXa</h3>
-<p>Have a project in mind? Reach out and let's discuss how we can help.</p>
-<div class="contact-details">
-<div class="contact-item"><strong>Email:</strong> <span>contact@aungbobokyaw.com</span></div>
-<div class="contact-item"><strong>Response Time:</strong> <span>Within 24-48 hours</span></div>
-<div class="contact-item"><strong>Services:</strong> <span>Web, AI, Automation, Cloud</span></div>
-</div>
-</div>
-<div class="contact-form">
-<form id="contactForm">
-<div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
-<div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="Your email" required></div>
-<div class="form-group"><label for="service">Service Needed</label><select id="service" name="service" required><option value="">Select a service</option><option value="web">Web Development</option><option value="ai">AI Solutions</option><option value="automation">Automation</option><option value="cloud">Cloud Solutions</option><option value="digital">Digital Services</option><option value="education">Education</option><option value="other">Other</option></select></div>
-<div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Describe your project or need..." required></textarea></div>
-<button type="submit" class="btn-primary">Send Message</button>
-</form>
-</div>
-</div>
-</div>
-</section>
-
-<section class="faq" id="faq">
-<div class="container">
-<div class="section-header"><h2>Frequently Asked Questions</h2></div>
-<div class="faq-list">
-<div class="faq-item"><button class="faq-question">What is neXa?<span class="faq-icon">+</span></button><div class="faq-answer"><p>neXa is an AI-powered technology platform providing web development, automation, cloud solutions, and digital services for businesses, creators, and developers.</p></div></div>
-<div class="faq-item"><button class="faq-question">What services does neXa provide?<span class="faq-icon">+</span></button><div class="faq-answer"><p>We provide web development, AI solutions, automation, cloud solutions, digital services, and technology education.</p></div></div>
-<div class="faq-item"><button class="faq-question">Can neXa build custom websites?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we build modern responsive websites, web applications, landing pages, business platforms, and custom digital solutions.</p></div></div>
-<div class="faq-item"><button class="faq-question">Can neXa integrate AI into an existing website?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we can integrate AI assistants, automation workflows, chatbots, and intelligent features into existing websites and applications.</p></div></div>
-<div class="faq-item"><button class="faq-question">Can neXa automate business workflows?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we build custom automation solutions to reduce repetitive work, connect tools, and streamline business processes.</p></div></div>
-<div class="faq-item"><button class="faq-question">Can neXa help with cloud deployment?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we provide cloud infrastructure setup, deployment, API development, storage solutions, and scalable services.</p></div></div>
-<div class="faq-item"><button class="faq-question">Can I request a custom solution?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we build custom web applications, AI integrations, automation systems, and complete digital solutions tailored to your needs.</p></div></div>
-<div class="faq-item"><button class="faq-question">How do I get started?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Simply contact us through the form above or email us. We'll discuss your project, provide recommendations, and get started.</p></div></div>
-<div class="faq-item"><button class="faq-question">How long does a typical project take?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Timeline depends on project scope. Landing pages can take days, while custom applications may take weeks. We'll provide a clear timeline after understanding your requirements.</p></div></div>
-<div class="faq-item"><button class="faq-question">Do you provide ongoing support?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes, we offer ongoing maintenance and support for deployed projects. Contact us to discuss support options.</p></div></div>
-</div>
-</div>
-</section>
-
-<section class="final-cta">
-<div class="container">
-<h2>Ready to Build Something Smarter?</h2>
-<p>Tell us what you want to build, improve, or automate. We'll help you get there.</p>
-<div class="cta-buttons"><a href="#contact" class="btn-primary">Get Started</a><a href="mailto:contact@aungbobokyaw.com" class="btn-secondary">Email neXa</a></div>
-</div>
-</section>
-
-<section class="platforms" id="platforms">
-<div class="container">
-<div class="section-header"><h2>Tools & Platforms We Use</h2><p>Powered by modern technologies and AI platforms.</p></div>
-<div class="platform-slider" id="platformSlider">
-<div class="platform-track" id="platformTrack">
-<span class="platform-item">GitHub</span>
-<span class="platform-item">Vercel</span>
-<span class="platform-item">React</span>
-<span class="platform-item">Node.js</span>
-<span class="platform-item">Tailwind CSS</span>
-<span class="platform-item">VS Code</span>
-<span class="platform-item">Figma</span>
-<span class="platform-item">Python</span>
-<span class="platform-item">Docker</span>
-<span class="platform-item">AWS</span>
-<span class="platform-item">Cloudflare</span>
-<span class="platform-item">Firebase</span>
-<span class="platform-item">ChatGPT</span>
-<span class="platform-item">DeepSeek</span>
-<span class="platform-item">Gemini</span>
-<span class="platform-item">Claude</span>
-</div>
-</div>
+<section id="home" class="hero-section">
+<div class="container hero-container">
+  <h1 data-i18n="hero_title">Build Faster. Create Smarter.</h1>
+  <p data-i18n="hero_desc">AI-powered digital platform for web development, AI solutions, automation, cloud solutions, and digital services.</p>
+  <div class="hero-cta">
+    <a href="./index.html#contact" class="btn-primary" data-i18n="hero_cta">Get Started</a>
+  </div>
 </div>
 </section>
 
 <footer class="footer">
 <div class="container">
-<div class="footer-grid">
-<div class="footer-brand"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> neXa</h3><p>Build Faster. Create Smarter.</p><p>AI-powered technology ecosystem for modern digital solutions.</p></div>
-<div class="footer-links"><h4>Navigation</h4><a href="#home">Home</a><a href="#services">Services</a><a href="#solutions">Solutions</a><a href="#ai">AI</a><a href="#projects">Projects</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-<div class="footer-links"><h4>Support</h4><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="mailto:contact@aungbobokyaw.com">Email</a></div>
-<div class="footer-links"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a></div>
-</div>
 <div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
 </div>
 </footer>
