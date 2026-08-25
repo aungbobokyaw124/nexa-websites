@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neXa — Login</title>
+<meta name="description" content="Login to neXa account">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4V16" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>neXa</a>
+<div class="nav-links" id="navLinks">
+<a href="index.html#home">Home</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#ai">AI</a>
+<a href="index.html#contact">Contact</a>
+</div>
+<div class="nav-actions">
+<a href="signup.html" class="get-started-btn">Sign Up</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<section class="auth-section">
+<div class="container auth-container">
+<div class="auth-card">
+<h1>Welcome Back</h1>
+<p>Login to your neXa account</p>
+<form id="loginForm">
+<div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="Your email" required></div>
+<div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" placeholder="Your password" required></div>
+<div class="form-group forgot-row"><a href="forgot.html">Forgot Password?</a></div>
+<button type="submit" class="btn-primary">Login</button>
+</form>
+<p class="auth-alt">Don't have an account? <a href="signup.html">Sign Up</a></p>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<!-- UI/Navigation Script -->
+<script src="script.js"></script>
+
+<!-- Firebase Authentication Script -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAPFtyR6CaesleHEwj3hC8Ziht9NwdxkLQ",
+  authDomain: "chat-app-e379d.firebaseapp.com",
+  projectId: "chat-app-e379d",
+  storageBucket: "chat-app-e379d.firebasestorage.app",
+  messagingSenderId: "1082025972243",
+  appId: "1:1082025972243:web:73971b283640e4c1a5a5e6"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert('Login successful!');
+      window.location.href = 'dashboard.html';
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+    });
+});
+</script>
+</body>
+</html>
