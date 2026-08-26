@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Deployment Guide for Beginners — neXa Blog</title>
+<meta name="description" content="Learn the basic process of cloud deployment. From preparing your application to testing after deployment.">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><img src="../logo.svg" alt="neXa" class="logo-img"></a>
+<div class="nav-links" id="navLinks">
+<a href="../index.html#home">Home</a>
+<a href="../blog.html">Blog</a>
+<a href="../index.html#contact">Contact</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<div class="blog-category">Cloud</div>
+<h1>Cloud Deployment Guide for Beginners</h1>
+<p>Published: August 2026</p>
+</div>
+</section>
+
+<section class="article-section">
+<div class="container article-content">
+<img src="../images/articles/article-cloud.jpg" alt="Cloud Deployment Guide" class="article-img">
+<p>Cloud deployment allows developers to make websites, applications, APIs, databases, and other digital services available through the internet without managing traditional physical servers themselves.</p>
+<p>For beginners, cloud deployment can seem complicated, but the basic process is easier to understand when it is divided into clear steps.</p>
+<h2>What Is Cloud Deployment?</h2>
+<p>Cloud deployment means running an application or service on infrastructure provided by a cloud platform.</p>
+<p>Instead of keeping an application on a personal computer, the application is deployed to a remote server or cloud environment that users can access through the internet.</p>
+<h2>Prepare the Application</h2>
+<p>Before deployment, the application should work correctly in a local development environment.</p>
+<p>The project should have a clear file structure, required dependencies, configuration files, and environment settings.</p>
+<p>Developers should also test the application before making it publicly available.</p>
+<h2>Choose a Cloud Platform</h2>
+<p>There are many cloud platforms available today.</p>
+<p>Different platforms provide different services, pricing models, deployment methods, databases, storage systems, and serverless technologies.</p>
+<p>The best platform depends on the requirements of the project.</p>
+<p>For a simple website, a static hosting platform may be enough.</p>
+<p>For an application requiring APIs, databases, authentication, or server-side processing, additional cloud services may be necessary.</p>
+<h2>Connect the Project</h2>
+<p>Many modern cloud platforms can connect directly to a Git repository.</p>
+<p>When code is pushed to the repository, the cloud platform can automatically build and deploy the latest version.</p>
+<p>This creates a simple development workflow:</p>
+<p>Write Code → Push to Git → Build → Deploy → Update Website</p>
+<h2>Environment Variables and Secrets</h2>
+<p>Applications often require API keys, database credentials, authentication secrets, or other sensitive configuration values.</p>
+<p>These should not be placed directly inside publicly accessible source code.</p>
+<p>Cloud platforms provide environment variable or secret-management systems that can be used to store sensitive configuration securely.</p>
+<h2>Test After Deployment</h2>
+<p>Deployment is not the final step.</p>
+<p>After the application goes live, developers should test the website, APIs, authentication, forms, database connections, and important user flows.</p>
+<p>Checking logs and monitoring errors can help identify problems that were not visible during local development.</p>
+<h2>Conclusion</h2>
+<p>Cloud deployment makes it possible to publish and operate modern digital applications without maintaining traditional physical infrastructure.</p>
+<p>Beginners should start with simple projects, understand the basic deployment process, and gradually learn about databases, APIs, authentication, security, monitoring, and scaling.</p>
+<p>The most important skill is not memorizing a specific cloud platform. It is understanding how an application moves from development to a reliable production environment.</p>
+<a href="../index.html#contact" class="btn-primary">Contact neXa</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+hamburger.addEventListener('click',()=>{navLinks.classList.toggle('active')});
+document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active')})});
+</script>
+</body>
+</html>
