@@ -53,7 +53,7 @@ async function loadProduct(){
 const urlParams=new URLSearchParams(window.location.search);
 const id=urlParams.get('id');
 try{
-const response=await fetch('products.json');
+const response=await fetch('product.json');
 const products=await response.json();
 const product=products.find(p=>p.id==id);
 if(product){renderProduct(product)}else{document.getElementById('productDetail').innerHTML='<p style="color:var(--text-secondary);">Product not found.</p>'}
