@@ -46,7 +46,7 @@
 
 <script src="script.js"></script>
 <script>
-async function loadPopular(){try{const r=await fetch('products.json');const products=await r.json();const popular=products.filter(p=>p.isPopular);document.getElementById('popularAllGrid').innerHTML=popular.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
+async function loadPopular(){try{const r=await fetch('product.json');const products=await r.json();const popular=products.filter(p=>p.isPopular);document.getElementById('popularAllGrid').innerHTML=popular.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
 loadPopular();
 </script>
 </body>
