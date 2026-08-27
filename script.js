@@ -1,25 +1,84 @@
 const hamburger=document.getElementById('hamburger');
 const navLinks=document.getElementById('navLinks');
-hamburger.addEventListener('click',()=>{navLinks.classList.toggle('active')});
+if(hamburger){hamburger.addEventListener('click',()=>{navLinks.classList.toggle('active')})}
 document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active')})});
 document.querySelectorAll('.faq-question').forEach(button=>{button.addEventListener('click',()=>{const answer=button.nextElementSibling;const icon=button.querySelector('.faq-icon');document.querySelectorAll('.faq-answer').forEach(item=>{if(item!==answer&&item.classList.contains('active')){item.classList.remove('active');item.previousElementSibling.querySelector('.faq-icon').textContent='+'}});answer.classList.toggle('active');icon.textContent=answer.classList.contains('active')?'−':'+'})});
-window.addEventListener('scroll',()=>{const navbar=document.getElementById('navbar');if(window.scrollY>50){navbar.style.boxShadow='0 2px 10px rgba(0,0,0,.3)'}else{navbar.style.boxShadow='none'}});
-const contactForm=document.getElementById('contactForm');
-if(contactForm){contactForm.addEventListener('submit',async function(e){e.preventDefault();const formData=new FormData(this);try{const response=await fetch('https://formspree.io/f/xaewglzb',{method:'POST',body:formData,headers:{'Accept':'application/json'}});if(response.ok){this.reset();alert('ကျေးဇူးတင်ပါသည်။ သင့်စာကို လက်ခံရရှိပါပြီ။')}else{alert('တစ်ခုခု မှားယွင်းနေပါသည်။ ထပ်မံကြိုးစားပါ။')}}catch(error){alert('အင်တာနက် ချိတ်ဆက်မှု စစ်ဆေးပါ။')}})}
-const translations={
-en:{home:'Home',services:'Services',solutions:'Solutions',ai:'AI',projects:'Projects',pricing:'Pricing',about:'About',contact:'Contact',blog:'Blog',heroTitle:'Build Faster.<br>Create Smarter.',heroDesc:'neXa brings AI, web development, automation, cloud solutions, and digital services together in one modern technology ecosystem.',exploreNeXa:'Explore neXa',getInTouch:'Get in Touch',servicesTitle:'Everything You Need to Build Digitally',servicesDesc:'From websites and AI systems to automation and cloud solutions, neXa provides practical technology services designed for modern businesses and creators.',solutionsTitle:'Technology Built Around Your Goal',aiTitle:'Meet the neXa AI Ecosystem',aiDesc:'Intelligent tools designed to help users build, automate, learn, and work faster.',projectsTitle:'Built for Real Digital Work',processTitle:'How It Works',whyTitle:'Why neXa?',testimonialsTitle:'What Our Clients Say',pricingTitle:'Choose What You Need',pricingDesc:'Flexible service options designed to match your project requirements and goals.',contactTitle:'Get in Touch',contactDesc:'Tell us what you want to build, improve, or automate.',faqTitle:'Frequently Asked Questions',finalCTATitle:'Ready to Build Something Smarter?',finalCTADesc:'Tell us what you want to build, improve, or automate.',platformsTitle:'Our Use Platforms',platformsDesc:'Powered by modern technologies and AI platforms.'},
-mm:{home:'ပင်မ',services:'ဝန်ဆောင်မှုများ',solutions:'ဖြေရှင်းနည်းများ',ai:'AI',projects:'ပရောဂျက်များ',pricing:'ဈေးနှုန်းများ',about:'အကြောင်း',contact:'ဆက်သွယ်ရန်',blog:'ဘလော့',heroTitle:'မြန်မြန်တည်ဆောက်ပါ။<br>ထက်မြက်စွာ ဖန်တီးပါ။',heroDesc:'neXa|Myanmar သည် AI၊ ဝဘ်ဖွံ့ဖြိုးတိုးတက်မှု၊ အလိုအလျောက်လုပ်ဆောင်မှု၊ cloud ဖြေရှင်းနည်းများနှင့် ဒစ်ဂျစ်တယ်ဝန်ဆောင်မှုများကို တစ်နေရာတည်းမှာ ပေါင်းစပ်ပေးပါသည်။',exploreNeXa:'neXa ကို စူးစမ်းပါ',getInTouch:'ဆက်သွယ်ပါ',servicesTitle:'ဒစ်ဂျစ်တယ် တည်ဆောက်ရန် လိုအပ်သမျှ',servicesDesc:'ဝဘ်ဆိုဒ်များ၊ AI စနစ်များ၊ အလိုအလျောက်လုပ်ဆောင်မှုနှင့် cloud ဖြေရှင်းနည်းများအထိ neXa|Myanmar သည် ခေတ်မီစီးပွားရေးလုပ်ငန်းများအတွက် လက်တွေ့ကျသော နည်းပညာဝန်ဆောင်မှုများကို ပေးပါသည်။',solutionsTitle:'သင့်ရည်မှန်းချက်အတွက် နည်းပညာ',aiTitle:'neXa AI ဂေဟစနစ်နှင့် မိတ်ဆက်ပါ',aiDesc:'အသုံးပြုသူများ မြန်မြန်တည်ဆောက်နိုင်၊ အလိုအလျောက်လုပ်နိုင်၊ သင်ယူနိုင်အောင် ကူညီပေးသော ထက်မြက်သည့် ကိရိယာများ။',projectsTitle:'တကယ့် ဒစ်ဂျစ်တယ်လုပ်ငန်းအတွက် တည်ဆောက်ထား',processTitle:'ဘယ်လို အလုပ်လုပ်သလဲ',whyTitle:'ဘာကြောင့် neXa?',testimonialsTitle:'ဖောက်သည်များ ပြောစကား',pricingTitle:'လိုအပ်တာကို ရွေးချယ်ပါ',pricingDesc:'သင့်ပရောဂျက်လိုအပ်ချက်နှင့် ရည်မှန်းချက်များနှင့် ကိုက်ညီအောင် ပြောင်းလွယ်သော ဝန်ဆောင်မှုရွေးချယ်စရာများ။',contactTitle:'ဆက်သွယ်ပါ',contactDesc:'တည်ဆောက်ချင်တာ၊ တိုးတက်အောင်လုပ်ချင်တာ ပြောပြပါ။',faqTitle:'အမေးများသော မေးခွန်းများ',finalCTATitle:'ထက်မြက်တဲ့ အရာတစ်ခု တည်ဆောက်ဖို့ အဆင်သင့်လား?',finalCTADesc:'တည်ဆောက်ချင်တာ၊ တိုးတက်အောင်လုပ်ချင်တာ ပြောပြပါ။',platformsTitle:'ကျွန်ုပ်တို့ အသုံးပြုသော ပလက်ဖောင်းများ',platformsDesc:'ခေတ်မီနည်းပညာများနှင့် AI ပလက်ဖောင်းများဖြင့် စွမ်းအားပြည့်ထားသည်။'}
-};
-let currentLang='mm';
-const langToggle=document.getElementById('langToggle');
-if(langToggle){langToggle.textContent='MM | EN';langToggle.addEventListener('click',()=>{if(currentLang==='mm'){currentLang='en';langToggle.textContent='EN | MM'}else{currentLang='mm';langToggle.textContent='MM | EN'}applyLanguage(currentLang)})}
-const themeBtn=document.createElement('button');
-themeBtn.className='theme-btn';
-themeBtn.textContent='🌙';
-themeBtn.setAttribute('aria-label','Toggle theme');
-const navActions=document.querySelector('.nav-actions');
-if(navActions){navActions.prepend(themeBtn)}
-let currentTheme='dark';
-themeBtn.addEventListener('click',()=>{if(currentTheme==='dark'){currentTheme='light';document.documentElement.setAttribute('data-theme','light');themeBtn.textContent='☀️'}else{currentTheme='dark';document.documentElement.removeAttribute('data-theme');themeBtn.textContent='🌙'}});
-function applyLanguage(lang){const t=translations[lang];if(!t)return;document.querySelectorAll('.nav-links a').forEach(link=>{const text=link.textContent.trim();if(text==='Home'||text==='ပင်မ')link.textContent=t.home;if(text==='Services'||text==='ဝန်ဆောင်မှုများ')link.textContent=t.services;if(text==='Solutions'||text==='ဖြေရှင်းနည်းများ')link.textContent=t.solutions;if(text==='AI')link.textContent=t.ai;if(text==='Projects'||text==='ပရောဂျက်များ')link.textContent=t.projects;if(text==='Pricing'||text==='ဈေးနှုန်းများ')link.textContent=t.pricing;if(text==='About'||text==='အကြောင်း')link.textContent=t.about;if(text==='Contact'||text==='ဆက်သွယ်ရန်')link.textContent=t.contact;if(text==='Blog'||text==='ဘလော့')link.textContent=t.blog});const heroH1=document.querySelector('.hero h1');if(heroH1)heroH1.innerHTML=t.heroTitle;const heroDesc=document.querySelector('.hero-description');if(heroDesc)heroDesc.textContent=t.heroDesc;document.querySelectorAll('.hero-buttons .btn-primary').forEach(btn=>{btn.textContent=t.exploreNeXa});document.querySelectorAll('.hero-buttons .btn-secondary').forEach(btn=>{btn.textContent=t.getInTouch});const sectionHeaders=document.querySelectorAll('.section-header h2');if(sectionHeaders[0])sectionHeaders[0].textContent=t.servicesTitle;if(sectionHeaders[1])sectionHeaders[1].textContent=t.solutionsTitle;if(sectionHeaders[2])sectionHeaders[2].textContent=t.aiTitle;if(sectionHeaders[3])sectionHeaders[3].textContent=t.projectsTitle;if(sectionHeaders[4])sectionHeaders[4].textContent=t.processTitle;if(sectionHeaders[5])sectionHeaders[5].textContent=t.whyTitle;if(sectionHeaders[6])sectionHeaders[6].textContent=t.testimonialsTitle;if(sectionHeaders[7])sectionHeaders[7].textContent=t.pricingTitle;if(sectionHeaders[8])sectionHeaders[8].textContent=t.contactTitle;if(sectionHeaders[9])sectionHeaders[9].textContent=t.faqTitle;if(sectionHeaders[10])sectionHeaders[10].textContent=t.platformsTitle;const sectionDescs=document.querySelectorAll('.section-header p');if(sectionDescs[0])sectionDescs[0].textContent=t.servicesDesc;if(sectionDescs[1])sectionDescs[1].textContent=t.aiDesc;if(sectionDescs[2])sectionDescs[2].textContent=t.pricingDesc;if(sectionDescs[3])sectionDescs[3].textContent=t.contactDesc;if(sectionDescs[4])sectionDescs[4].textContent=t.platformsDesc}
-applyLanguage('mm');
+
+let products=[];
+async function loadProducts(){
+try{
+const response=await fetch('products.json');
+products=await response.json();
+renderFeatured();
+renderCategories();
+renderNew();
+renderPopular();
+renderFree();
+}catch(e){console.log('Products loading...')}
+}
+
+function createProductCard(product){
+const originalPrice=product.originalPrice?`<span class="original">$${product.originalPrice}</span>`:'';
+const priceDisplay=product.isFree?'<span class="product-price">Free</span>':`<div class="product-price">${originalPrice}$${product.price}</div>`;
+const badge=product.isFree?'<span class="product-badge badge-free">Free</span>':(product.originalPrice?'<span class="product-badge badge-discount">-'+Math.round((1-product.price/product.originalPrice)*100)+'%</span>':'<span class="product-badge badge-premium">Premium</span>');
+const tech=product.technology?product.technology.slice(0,3).join(' · '):'';
+return`
+<div class="product-card">
+<img src="${product.thumbnail}" alt="${product.name}" class="product-img" onerror="this.src='images/placeholder.jpg'">
+<div class="product-body">
+${badge}
+<h3 class="product-name">${product.name}</h3>
+<p class="product-desc">${product.shortDescription}</p>
+<p class="product-tech">${tech}</p>
+<div class="product-footer">
+${priceDisplay}
+<span class="product-rating">★ ${product.rating}</span>
+</div>
+<div class="product-actions">
+<a href="product.html?id=${product.id}" class="product-btn btn-preview">Preview</a>
+<a href="product.html?id=${product.id}" class="product-btn btn-buy">Buy Now</a>
+</div>
+</div>
+</div>`;
+}
+
+function renderFeatured(){
+const grid=document.getElementById('featuredGrid');
+if(!grid)return;
+const featured=products.filter(p=>p.isFeatured).slice(0,6);
+grid.innerHTML=featured.map(createProductCard).join('');
+}
+
+function renderNew(){
+const grid=document.getElementById('newGrid');
+if(!grid)return;
+const sorted=[...products].sort((a,b)=>new Date(b.lastUpdated)-new Date(a.lastUpdated)).slice(0,6);
+grid.innerHTML=sorted.map(createProductCard).join('');
+}
+
+function renderPopular(){
+const grid=document.getElementById('popularGrid');
+if(!grid)return;
+const popular=products.filter(p=>p.isPopular).slice(0,6);
+grid.innerHTML=popular.map(createProductCard).join('');
+}
+
+function renderFree(){
+const grid=document.getElementById('freeGrid');
+if(!grid)return;
+const free=products.filter(p=>p.isFree).slice(0,3);
+grid.innerHTML=free.map(createProductCard).join('');
+}
+
+function renderCategories(){
+const grid=document.getElementById('categoriesGrid');
+if(!grid)return;
+const categories=['Website Templates','Landing Pages','Admin Dashboards','SaaS','E-commerce','AI','Portfolio','Blog','UI Kits','Mobile UI','Business','Free'];
+const icons={'Website Templates':'🌐','Landing Pages':'🚀','Admin Dashboards':'📊','SaaS':'☁️','E-commerce':'🛒','AI':'🤖','Portfolio':'🎨','Blog':'📝','UI Kits':'🧩','Mobile UI':'📱','Business':'💼','Free':'🎁'};
+grid.innerHTML=categories.map(cat=>{
+const count=products.filter(p=>p.category===cat).length;
+return`<a href="templates.html?category=${encodeURIComponent(cat)}" class="category-card"><div class="category-icon">${icons[cat]||'📦'}</div><div class="category-name">${cat}</div><div class="category-count">${count} templates</div></a>`;
+}).join('');
+}
+
+loadProducts();
