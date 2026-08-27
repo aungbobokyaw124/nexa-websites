@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>neXa|Myanmar — Dashboard</title>
-<meta name="description" content="neXa|Myanmar user dashboard">
+<title>neXa — Customer Dashboard</title>
+<meta name="description" content="neXa customer dashboard - manage purchases, downloads, and account settings.">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -12,12 +12,13 @@
 <body>
 <nav class="navbar" id="navbar">
 <div class="container nav-container">
-<a href="index.html" class="logo"><img src="logo.svg" alt="neXa|Myanmar" class="logo-img"></a>
+<a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
 <div class="nav-links" id="navLinks">
-<a href="index.html#home">Home</a>
-<a href="index.html#services">Services</a>
-<a href="index.html#ai">AI</a>
-<a href="index.html#contact">Contact</a>
+<a href="index.html#featured">Featured</a>
+<a href="templates.html">Templates</a>
+<a href="free.html">Free</a>
+<a href="new.html">New</a>
+<a href="popular.html">Popular</a>
 </div>
 <div class="nav-actions">
 <a href="index.html" class="get-started-btn" id="logoutBtn">Logout</a>
@@ -27,35 +28,48 @@
 </button>
 </div>
 </nav>
+
 <section class="dashboard-section">
 <div class="container dashboard-container">
 <div class="dashboard-sidebar">
 <h3>Dashboard</h3>
 <a href="#overview" class="dash-link active">Overview</a>
-<a href="#projects" class="dash-link">Projects</a>
-<a href="#services" class="dash-link">Services</a>
-<a href="#messages" class="dash-link">Messages</a>
-<a href="#settings" class="dash-link">Settings</a>
+<a href="#purchases" class="dash-link">My Purchases</a>
+<a href="#downloads" class="dash-link">Downloads</a>
+<a href="#favorites" class="dash-link">Favorites</a>
+<a href="#orders" class="dash-link">Orders</a>
+<a href="#settings" class="dash-link">Account Settings</a>
 </div>
 <div class="dashboard-main">
 <div class="dashboard-header">
 <h1>Welcome Back</h1>
-<p>Manage your projects and services</p>
+<p>Manage your purchases, downloads, and account.</p>
 </div>
 <div class="dashboard-grid">
-<div class="dash-card"><h3>My Projects</h3><p>No projects yet</p></div>
-<div class="dash-card"><h3>Active Services</h3><p>No active services</p></div>
-<div class="dash-card"><h3>Messages</h3><p>No messages</p></div>
-<div class="dash-card"><h3>Requests</h3><p>No requests</p></div>
+<div class="dash-card"><h3>Total Purchases</h3><p>0</p></div>
+<div class="dash-card"><h3>Available Downloads</h3><p>0</p></div>
+<div class="dash-card"><h3>Favorites</h3><p>0</p></div>
+<div class="dash-card"><h3>Recent Orders</h3><p>0</p></div>
+</div>
+<div class="dash-placeholder">
+<p style="color:var(--text-muted);text-align:center;padding:40px;">No purchases yet. <a href="templates.html" style="color:var(--primary);">Browse Templates</a></p>
 </div>
 </div>
 </div>
 </section>
+
 <footer class="footer">
 <div class="container">
-<div class="footer-bottom"><p>&copy; 2026 neXa|Myanmar. All rights reserved.</p></div>
+<div class="footer-grid">
+<div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
+<div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+<div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
 </div>
 </footer>
+
 <script>
 const hamburger=document.getElementById('hamburger');
 const navLinks=document.getElementById('navLinks');
