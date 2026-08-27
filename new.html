@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Templates — neXa</title>
+<meta name="description" content="Newly added templates on neXa.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
+<div class="nav-links" id="navLinks">
+<a href="templates.html">Templates</a>
+<a href="free.html">Free</a>
+<a href="new.html">New</a>
+<a href="popular.html">Popular</a>
+<a href="blog.html">Blog</a>
+</div>
+<div class="nav-actions"><a href="login.html" class="get-started-btn">Login</a></div>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<section class="templates-section">
+<div class="container">
+<div class="page-header"><h1>New Templates</h1><p>Freshly added templates ready for your next launch.</p></div>
+<div class="product-grid" id="newAllGrid"></div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
+<div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+<div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+async function loadNew(){try{const r=await fetch('products.json');const products=await r.json();const sorted=[...products].sort((a,b)=>new Date(b.lastUpdated)-new Date(a.lastUpdated));document.getElementById('newAllGrid').innerHTML=sorted.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
+loadNew();
+</script>
+</body>
+</html>
