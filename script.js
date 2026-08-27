@@ -7,7 +7,7 @@ document.querySelectorAll('.faq-question').forEach(button=>{button.addEventListe
 let products=[];
 async function loadProducts(){
 try{
-const response=await fetch('products.json');
+const response=await fetch('product.json');
 products=await response.json();
 renderFeatured();
 renderCategories();
