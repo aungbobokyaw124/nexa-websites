@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template Details — neXa</title>
+<meta name="description" content="Premium digital template details and preview.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
+<div class="nav-links" id="navLinks">
+<a href="templates.html">Templates</a>
+<a href="free.html">Free</a>
+<a href="new.html">New</a>
+<a href="popular.html">Popular</a>
+<a href="blog.html">Blog</a>
+</div>
+<div class="nav-actions">
+<a href="login.html" class="get-started-btn">Login</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<section class="product-detail-section">
+<div class="container">
+<div id="productDetail"></div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
+<div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+<div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+async function loadProduct(){
+const urlParams=new URLSearchParams(window.location.search);
+const id=urlParams.get('id');
+try{
+const response=await fetch('products.json');
+const products=await response.json();
+const product=products.find(p=>p.id==id);
+if(product){renderProduct(product)}else{document.getElementById('productDetail').innerHTML='<p style="color:var(--text-secondary);">Product not found.</p>'}
+}catch(e){console.log('Loading...')}
+}
+function renderProduct(p){
+const originalPrice=p.originalPrice?`<span class="original">$${p.originalPrice}</span>`:'';
+const priceDisplay=p.isFree?'<span class="product-price">Free</span>':`<div class="product-price">${originalPrice}$${p.price}</div>`;
+const badge=p.isFree?'<span class="product-badge badge-free">Free</span>':(p.originalPrice?'<span class="product-badge badge-discount">-'+Math.round((1-p.price/p.originalPrice)*100)+'%</span>':'<span class="product-badge badge-premium">Premium</span>');
+const features=p.features?p.features.map(f=>`<li>${f}</li>`).join(''):'';
+const tech=p.technology?p.technology.map(t=>`<span class="tech-tag">${t}</span>`).join(''):'';
+const tags=p.tags?p.tags.map(t=>`<span class="tech-tag">#${t}</span>`).join(''):'';
+document.getElementById('productDetail').innerHTML=`
+<div class="product-detail-grid">
+<div class="product-gallery">
+<img src="${p.thumbnail}" alt="${p.name}" class="product-main-img" onerror="this.src='images/placeholder.jpg'">
+${p.gallery&&p.gallery.length>1?`<div class="product-thumbs">${p.gallery.map(g=>`<img src="${g}" class="thumb" onerror="this.src='images/placeholder.jpg'">`).join('')}</div>`:''}
+</div>
+<div class="product-info">
+${badge}
+<h1 class="product-title">${p.name}</h1>
+<p class="product-full-desc">${p.description}</p>
+<div class="product-meta">
+<div><strong>Category:</strong> ${p.category}</div>
+<div><strong>Version:</strong> ${p.version}</div>
+<div><strong>Last Updated:</strong> ${p.lastUpdated}</div>
+<div><strong>License:</strong> ${p.license}</div>
+<div><strong>Rating:</strong> ★ ${p.rating}</div>
+</div>
+<div class="product-price-row">${priceDisplay}</div>
+<div class="product-actions">
+<a href="${p.demoUrl}" class="btn-secondary" target="_blank">Live Preview</a>
+<a href="login.html" class="btn-primary">Buy Now</a>
+<a href="login.html" class="btn-secondary">Add to Cart</a>
+</div>
+</div>
+</div>
+<div class="product-details-extra">
+<div class="product-section-card">
+<h2>Features</h2>
+<ul class="feature-list">${features}</ul>
+</div>
+<div class="product-section-card">
+<h2>Technology</h2>
+<div class="tech-tags">${tech}</div>
+</div>
+<div class="product-section-card">
+<h2>Tags</h2>
+<div class="tech-tags">${tags}</div>
+</div>
+<div class="product-section-card">
+<h2>What's Included</h2>
+<ul class="feature-list"><li>Source code</li><li>Assets</li><li>Documentation</li><li>Components</li><li>Demo files</li><li>License</li></ul>
+</div>
+</div>`;
+}
+loadProduct();
+</script>
+</body>
+</html>
