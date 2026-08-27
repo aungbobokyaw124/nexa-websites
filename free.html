@@ -46,7 +46,7 @@
 
 <script src="script.js"></script>
 <script>
-async function loadFree(){try{const r=await fetch('products.json');const products=await r.json();const free=products.filter(p=>p.isFree);document.getElementById('freeAllGrid').innerHTML=free.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
+async function loadFree(){try{const r=await fetch('product.json');const products=await r.json();const free=products.filter(p=>p.isFree);document.getElementById('freeAllGrid').innerHTML=free.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
 loadFree();
 </script>
 </body>
