@@ -61,7 +61,7 @@
 let allProducts=[];
 async function loadAll(){
 try{
-const response=await fetch('products.json');
+const response=await fetch('product.json');
 allProducts=await response.json();
 renderFiltered();
 const urlParams=new URLSearchParams(window.location.search);
