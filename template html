@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neXa — Templates Marketplace</title>
+<meta name="description" content="Browse premium website templates, dashboards, UI kits, and digital products.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
+<div class="nav-links" id="navLinks">
+<a href="templates.html">Templates</a>
+<a href="templates.html">Categories</a>
+<a href="free.html">Free</a>
+<a href="new.html">New</a>
+<a href="popular.html">Popular</a>
+<a href="blog.html">Blog</a>
+</div>
+<div class="nav-actions">
+<a href="login.html" class="get-started-btn">Login</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<section class="templates-section">
+<div class="container">
+<div class="page-header"><h1>All Templates</h1><p>Browse our collection of premium digital templates.</p></div>
+<div class="filter-bar">
+<input type="text" id="searchInput" placeholder="Search templates...">
+<select id="categoryFilter"><option value="">All Categories</option><option>Website Templates</option><option>Landing Pages</option><option>Admin Dashboards</option><option>SaaS</option><option>E-commerce</option><option>AI</option><option>Portfolio</option><option>Blog</option><option>UI Kits</option><option>Mobile UI</option><option>Business</option></select>
+<select id="priceFilter"><option value="">All Prices</option><option value="free">Free</option><option value="under10">Under $10</option><option value="10-25">$10 - $25</option><option value="25-50">$25 - $50</option><option value="50plus">$50+</option></select>
+<select id="sortFilter"><option value="newest">Newest</option><option value="popular">Popular</option><option value="rating">Best Rated</option><option value="priceLow">Price Low → High</option><option value="priceHigh">Price High → Low</option></select>
+</div>
+<div class="product-grid" id="allGrid"></div>
+<div id="noResults" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">No templates found. Try adjusting your filters.</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
+<div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a></div>
+<div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+let allProducts=[];
+async function loadAll(){
+try{
+const response=await fetch('products.json');
+allProducts=await response.json();
+renderFiltered();
+const urlParams=new URLSearchParams(window.location.search);
+const category=urlParams.get('category');
+if(category){document.getElementById('categoryFilter').value=category;renderFiltered()}
+}catch(e){console.log('Loading...')}
+}
+function renderFiltered(){
+const search=document.getElementById('searchInput').value.toLowerCase();
+const category=document.getElementById('categoryFilter').value;
+const price=document.getElementById('priceFilter').value;
+const sort=document.getElementById('sortFilter').value;
+let filtered=[...allProducts];
+if(search){filtered=filtered.filter(p=>p.name.toLowerCase().includes(search)||p.shortDescription.toLowerCase().includes(search)||(p.tags&&p.tags.some(t=>t.toLowerCase().includes(search))))}
+if(category){filtered=filtered.filter(p=>p.category===category)}
+if(price==='free'){filtered=filtered.filter(p=>p.isFree)}
+if(price==='under10'){filtered=filtered.filter(p=>!p.isFree&&p.price<10)}
+if(price==='10-25'){filtered=filtered.filter(p=>!p.isFree&&p.price>=10&&p.price<=25)}
+if(price==='25-50'){filtered=filtered.filter(p=>!p.isFree&&p.price>25&&p.price<=50)}
+if(price==='50plus'){filtered=filtered.filter(p=>!p.isFree&&p.price>50)}
+if(sort==='newest'){filtered.sort((a,b)=>new Date(b.lastUpdated)-new Date(a.lastUpdated))}
+if(sort==='popular'){filtered.sort((a,b)=>b.rating-a.rating)}
+if(sort==='rating'){filtered.sort((a,b)=>b.rating-a.rating)}
+if(sort==='priceLow'){filtered.sort((a,b)=>a.price-b.price)}
+if(sort==='priceHigh'){filtered.sort((a,b)=>b.price-a.price)}
+const grid=document.getElementById('allGrid');
+const noResults=document.getElementById('noResults');
+if(filtered.length===0){grid.innerHTML='';noResults.style.display='block'}else{noResults.style.display='none';grid.innerHTML=filtered.map(createProductCard).join('')}
+}
+document.getElementById('searchInput').addEventListener('input',renderFiltered);
+document.getElementById('categoryFilter').addEventListener('change',renderFiltered);
+document.getElementById('priceFilter').addEventListener('change',renderFiltered);
+document.getElementById('sortFilter').addEventListener('change',renderFiltered);
+loadAll();
+</script>
+</body>
+</html>
