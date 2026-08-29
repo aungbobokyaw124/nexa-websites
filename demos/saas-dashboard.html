@@ -1,1 +1,54 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modern SaaS Dashboard — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:14px Inter,Arial,sans-serif}header{padding:18px 24px;border-bottom:1px solid #1E3A5F;display:flex;justify-content:space-between}main{padding:28px}.grid{display:grid;grid-template-columns:220px 1fr;gap:20px}.card{background:#132F52;border:1px solid #1E3A5F;border-radius:14px;padding:20px}.accent{color:#10B981}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:700px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}</style></head><body><header><b>neXa SaaS</b><span class="accent">Dashboard Demo</span></header><main><div class="grid"><aside class="card"><h3>Dashboard</h3><p>Overview</p><p>Analytics</p><p>Users</p><p>Billing</p><p>Settings</p></aside><section><h1>Modern SaaS Dashboard</h1><p>Analytics, user management and billing overview.</p><div class="stats"><div class="card"><small>Revenue</small><h2>$24,580</h2></div><div class="card"><small>Users</small><h2>12,840</h2></div><div class="card"><small>Growth</small><h2 class="accent">+18.4%</h2></div></div><br><div class="card"><h3>Analytics Overview</h3><p>Monthly performance dashboard preview.</p></div></section></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Dashboard Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1F3A;--surface:#0F2847;--card:#132F52;--border:#1E3A5F;--primary:#10B981;--text:#fff;--muted:#94A3B8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex}
+.sidebar{width:220px;background:var(--surface);border-right:1px solid var(--border);padding:20px;display:flex;flex-direction:column;gap:16px}
+.sidebar h2{font-size:18px;color:var(--primary);margin-bottom:8px}
+.sidebar a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px 12px;border-radius:8px;transition:all .3s}
+.sidebar a:hover{background:var(--card);color:var(--text)}
+.main{flex:1;padding:20px;display:flex;flex-direction:column;gap:20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.header h1{font-size:20px}
+.header button{background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.card h3{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card p{font-size:24px;font-weight:700;color:var(--primary)}
+.chart{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.chart h3{font-size:14px;margin-bottom:16px}
+.bars{display:flex;gap:8px;align-items:flex-end;height:150px}
+.bar{flex:1;background:var(--primary);border-radius:4px;opacity:.7}
+.bar:nth-child(1){height:40%}.bar:nth-child(2){height:70%}.bar:nth-child(3){height:50%}.bar:nth-child(4){height:80%}.bar:nth-child(5){height:60%}.bar:nth-child(6){height:90%}.bar:nth-child(7){height:55%}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid var(--primary);color:var(--primary);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600;z-index:100}
+@media(max-width:768px){body{flex-direction:column}.sidebar{width:100%;flex-direction:row;flex-wrap:wrap}.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="sidebar">
+<h2>Dashboard</h2>
+<a href="#">Overview</a>
+<a href="#">Analytics</a>
+<a href="#">Users</a>
+<a href="#">Billing</a>
+<a href="#">Settings</a>
+</div>
+<div class="main">
+<div class="header"><h1>Overview</h1><button>New Report</button></div>
+<div class="cards">
+<div class="card"><h3>Total Users</h3><p>2,847</p></div>
+<div class="card"><h3>Revenue</h3><p>$12,430</p></div>
+<div class="card"><h3>Active Sessions</h3><p>1,204</p></div>
+<div class="card"><h3>Conversion</h3><p>3.6%</p></div>
+</div>
+<div class="chart"><h3>Weekly Analytics</h3><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+</div>
+</body>
+</html>
