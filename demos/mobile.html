@@ -1,1 +1,28 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mobile App UI — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:14px Arial;display:flex;justify-content:center}.phone{width:360px;min-height:100vh;background:#0F2847}.top{padding:22px;background:#132F52}.content{padding:20px}.card{background:#132F52;border:1px solid #1E3A5F;border-radius:14px;padding:18px;margin:12px 0}.accent{color:#10B981}</style></head><body><main class="phone"><div class="top"><b>neXa Mobile</b><p class="accent">Home · Feed · Profile</p></div><section class="content"><h1>Mobile App UI</h1><p>20+ modern mobile screens.</p><div class="card"><h3>Welcome back</h3><p>Your personalized feed is ready.</p></div><div class="card"><h3>Latest Activity</h3><p>New project added</p><p>Profile updated</p></div><div class="card"><h3>Settings</h3><p>Account · Notifications · Security</p></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile UI Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;min-height:100vh;display:flex;justify-content:center;gap:24px;padding:40px;flex-wrap:wrap}
+.phone{width:250px;height:450px;background:#0F2847;border:2px solid #1E3A5F;border-radius:24px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.phone h3{text-align:center;color:#10B981;font-size:14px}
+.screen{flex:1;background:#132F52;border-radius:12px;display:flex;flex-direction:column;gap:8px;padding:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:#10B981;margin:0 auto}
+.line{height:8px;background:#1E3A5F;border-radius:4px}
+.line.short{width:60%}
+.btn{background:#10B981;color:#fff;border:none;padding:8px;border-radius:8px;font-size:12px;font-weight:600}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){.phone{width:200px;height:360px}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="phone"><h3>Login</h3><div class="screen"><div class="avatar"></div><div class="line"></div><div class="line short"></div><button class="btn">Login</button></div></div>
+<div class="phone"><h3>Profile</h3><div class="screen"><div class="avatar"></div><div class="line"></div><div class="line short"></div><button class="btn">Edit</button></div></div>
+<div class="phone"><h3>Feed</h3><div class="screen"><div class="line"></div><div class="line short"></div><div class="line"></div><div class="line short"></div><button class="btn">Load More</button></div></div>
+</body>
+</html>
