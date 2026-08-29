@@ -1,1 +1,44 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Chat Interface — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:14px Arial}.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.side,.top,.input{background:#132F52;border:1px solid #1E3A5F}.side{padding:20px}.chat{display:flex;flex-direction:column}.top{padding:20px}.messages{padding:30px;flex:1;max-width:800px;width:90%;margin:auto}.msg{padding:14px 16px;border-radius:12px;margin:12px 0;background:#132F52}.user{margin-left:20%;border:1px solid #10B981}.input{margin:20px;padding:16px;border-radius:10px}.a{color:#10B981}@media(max-width:700px){.app{grid-template-columns:1fr}.side{display:none}}</style></head><body><div class="app"><aside class="side"><h2>neXa AI</h2><p>New Chat</p><p>History</p><p>Settings</p></aside><section class="chat"><div class="top"><b>AI Chat Interface</b> <span class="a">● Online</span></div><div class="messages"><div class="msg">Hello! How can I help you today?</div><div class="msg user">Create a landing page for my startup.</div><div class="msg">Sure. I can help you plan the structure, sections and content.</div></div><div class="input">Message AI... <span class="a">➤</span></div></section></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chat Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;height:100vh;display:flex}
+.sidebar{width:260px;background:#0F2847;border-right:1px solid #1E3A5F;padding:16px;display:flex;flex-direction:column;gap:12px}
+.sidebar h2{font-size:16px;color:#10B981}
+.conv{background:#132F52;padding:12px;border-radius:8px;color:#94A3B8;font-size:13px}
+.main{flex:1;display:flex;flex-direction:column}
+.messages{flex:1;padding:24px;display:flex;flex-direction:column;gap:16px}
+.msg{max-width:70%;padding:12px 16px;border-radius:12px;font-size:14px;line-height:1.5}
+.msg.ai{background:#132F52;align-self:flex-start}
+.msg.user{background:#10B981;align-self:flex-end;color:#fff}
+.input-bar{display:flex;gap:12px;padding:16px;border-top:1px solid #1E3A5F}
+.input-bar input{flex:1;padding:12px;background:#0F2847;border:1px solid #1E3A5F;border-radius:8px;color:#fff;font-family:inherit}
+.input-bar button{background:#10B981;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;cursor:pointer}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){.sidebar{display:none}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="sidebar">
+<h2>AI Chat</h2>
+<div class="conv">New Conversation</div>
+<div class="conv">Previous Chat 1</div>
+<div class="conv">Previous Chat 2</div>
+<div class="conv">Previous Chat 3</div>
+</div>
+<div class="main">
+<div class="messages">
+<div class="msg ai">Hello! How can I help you today?</div>
+<div class="msg user">Can you help me with my project?</div>
+<div class="msg ai">Of course! Tell me more about your project.</div>
+</div>
+<div class="input-bar"><input placeholder="Type a message..."><button>Send</button></div>
+</div>
+</body>
+</html>
