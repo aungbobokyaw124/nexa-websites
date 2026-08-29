@@ -1,1 +1,42 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Panel Lite — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:14px Arial}.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}.side{background:#132F52;padding:20px}.main{padding:25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#132F52;border:1px solid #1E3A5F;border-radius:12px;padding:18px}.accent{color:#10B981}@media(max-width:700px){.app{grid-template-columns:1fr}.side{display:none}.grid{grid-template-columns:1fr}}</style></head><body><div class="app"><aside class="side"><h2>Admin Lite</h2><p>Dashboard</p><p>Users</p><p>Tables</p><p>Forms</p><p>Settings</p></aside><main class="main"><h1>Dashboard</h1><p class="accent">Admin Panel Lite</p><div class="grid"><div class="card"><small>Users</small><h2>1,248</h2></div><div class="card"><small>Orders</small><h2>486</h2></div><div class="card"><small>Revenue</small><h2>$8,420</h2></div></div><div class="card" style="margin-top:18px"><h3>Recent Users</h3><p>Alex Morgan · Active</p><p>John Lee · Active</p><p>Maria Chen · Pending</p></div></main></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Lite Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;min-height:100vh;display:flex}
+.sidebar{width:200px;background:#0F2847;border-right:1px solid #1E3A5F;padding:16px;display:flex;flex-direction:column;gap:12px}
+.sidebar h2{font-size:16px;color:#10B981;margin-bottom:8px}
+.sidebar a{color:#94A3B8;text-decoration:none;font-size:13px;padding:8px;border-radius:6px}
+.sidebar a:hover{background:#132F52;color:#fff}
+.main{flex:1;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.header h1{font-size:20px}
+.header button{background:#10B981;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer}
+.table{background:#0F2847;border:1px solid #1E3A5F;border-radius:12px;overflow:hidden}
+.row{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #1E3A5F}
+.row:last-child{border-bottom:none}
+.row span{color:#94A3B8;font-size:13px}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){body{flex-direction:column}.sidebar{width:100%;flex-direction:row;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="sidebar">
+<h2>Admin</h2>
+<a href="#">Dashboard</a><a href="#">Users</a><a href="#">Orders</a><a href="#">Settings</a>
+</div>
+<div class="main">
+<div class="header"><h1>Users</h1><button>Add User</button></div>
+<div class="table">
+<div class="row"><span>User 1</span><span>Active</span></div>
+<div class="row"><span>User 2</span><span>Active</span></div>
+<div class="row"><span>User 3</span><span>Inactive</span></div>
+</div>
+</div>
+</body>
+</html>
