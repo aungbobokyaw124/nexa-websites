@@ -14,6 +14,7 @@
 <div class="container nav-container">
 <a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
 <div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
 <a href="templates.html">Templates</a>
 <a href="free.html">Free</a>
 <a href="new.html">New</a>
@@ -29,6 +30,7 @@
 <div class="container">
 <div class="page-header"><h1>Free Templates</h1><p>Start building for free with quality templates.</p></div>
 <div class="product-grid" id="freeAllGrid"></div>
+<div id="noResults" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);">No free templates found.</div>
 </div>
 </section>
 
@@ -37,7 +39,7 @@
 <div class="footer-grid">
 <div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
 <div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
-<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a></div>
 <div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
 </div>
 <div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
@@ -46,7 +48,16 @@
 
 <script src="script.js"></script>
 <script>
-async function loadFree(){try{const r=await fetch('product.json');const products=await r.json();const free=products.filter(p=>p.isFree);document.getElementById('freeAllGrid').innerHTML=free.map(createProductCard).join('')}catch(e){console.log('Loading...')}}
+async function loadFree(){
+try{
+const r=await fetch('product.json');
+const products=await r.json();
+const free=products.filter(p=>p.isFree);
+const grid=document.getElementById('freeAllGrid');
+const noResults=document.getElementById('noResults');
+if(free.length===0){grid.innerHTML='';noResults.style.display='block'}else{noResults.style.display='none';grid.innerHTML=free.map(createProductCard).join('')}
+}catch(e){console.log('Loading...')}
+}
 loadFree();
 </script>
 </body>
