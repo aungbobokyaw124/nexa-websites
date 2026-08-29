@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Templates — neXa</title>
+<meta name="description" content="Browse premium website templates, dashboards, UI kits, AI interfaces and free digital templates on neXa.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.catalog-section{padding:110px 0 80px}.catalog-toolbar{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:28px;display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px}.catalog-control{width:100%;padding:12px 14px;background:var(--background);border:1px solid var(--border);border-radius:9px;color:var(--text);font:inherit}.catalog-control:focus{outline:none;border-color:var(--primary)}.catalog-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--text-secondary);font-size:14px}.empty-state{grid-column:1/-1;padding:40px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;color:var(--text-secondary)}.empty-state strong{display:block;color:var(--text);font-size:18px;margin-bottom:6px}@media(max-width:900px){.catalog-toolbar{grid-template-columns:1fr 1fr}.product-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.catalog-toolbar{grid-template-columns:1fr}.catalog-section{padding-top:95px}.product-grid{grid-template-columns:1fr}.catalog-meta{align-items:flex-start;gap:12px;flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"><div class="container nav-container">
+<a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
+<div class="nav-links" id="navLinks">
+<a href="templates.html">Templates</a><a href="templates.html#categories">Categories</a><a href="free.html">Free</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="blog.html">Blog</a>
+<div class="nav-auth-mobile"><a href="login.html" class="auth-btn-blue">Login</a><a href="signup.html" class="auth-btn-outline">Sign Up</a></div>
+</div>
+<div class="nav-actions"><a href="login.html" class="get-started-btn">Login</a></div>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<main class="catalog-section"><div class="container">
+<div class="page-header"><h1>Explore Templates</h1><p>Find a ready-to-launch digital template for your next project.</p></div>
+<div class="catalog-toolbar" aria-label="Template filters">
+<input id="templateSearch" class="catalog-control" type="search" placeholder="Search templates..." aria-label="Search templates">
+<select id="categoryFilter" class="catalog-control" aria-label="Category"><option value="all">All Categories</option><option>Website Templates</option><option>Landing Pages</option><option>Admin Dashboards</option><option>SaaS</option><option>E-commerce</option><option>AI</option><option>Portfolio</option><option>Blog</option><option>UI Kits</option><option>Mobile UI</option><option>Business</option><option>Free</option></select>
+<select id="priceFilter" class="catalog-control" aria-label="Price"><option value="all">All Prices</option><option value="free">Free</option><option value="under20">Under $20</option><option value="20to40">$20 – $40</option><option value="over40">Over $40</option></select>
+<select id="technologyFilter" class="catalog-control" aria-label="Technology"><option value="all">All Technology</option><option>HTML5</option><option>CSS3</option><option>JavaScript</option><option>Tailwind CSS</option><option>React</option><option>Astro</option></select>
+<select id="sortFilter" class="catalog-control" aria-label="Sort"><option value="newest">Newest</option><option value="rating">Top Rated</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option></select>
+</div>
+<div class="catalog-meta"><span id="templateCount">Loading templates...</span><span>Digital Templates · Built to Launch.</span></div>
+<div class="product-grid" id="templatesGrid"><div class="empty-state"><strong>Loading templates...</strong><p>Please wait.</p></div></div>
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
+<div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a></div>
+<div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
+</div><div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
