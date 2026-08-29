@@ -63,7 +63,8 @@ const badge=p.isFree?'<span class="product-badge badge-free">Free</span>':(p.ori
 const features=p.features?p.features.map(f=>`<li>${f}</li>`).join(''):'';
 const tech=p.technology?p.technology.map(t=>`<span class="tech-tag">${t}</span>`).join(''):'';
 const tags=p.tags?p.tags.map(t=>`<span class="tech-tag">#${t}</span>`).join(''):'';
-document.getElementById('productDetail').innerHTML=`
+document.getElementById('productDetail').innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:40px;">Loading template...</p>';
+  document.getElementById('productDetail').innerHTML=`
 <div class="product-detail-grid">
 <div class="product-gallery">
 <img src="${p.thumbnail}" alt="${p.name}" class="product-main-img" loading="lazy">
