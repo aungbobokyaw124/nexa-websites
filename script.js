@@ -35,8 +35,7 @@ ${priceDisplay}
 <span class="product-rating">★ ${product.rating}</span>
 </div>
 <div class="product-actions">
-<a href="product.html?id=${product.id}" class="product-btn btn-preview" onclick="return true">Preview</a>
-<a href="product.html?id=${product.id}" class="product-btn btn-buy">Buy Now</a>
+<a href="${product.thumbnail}" class="product-btn btn-preview" target="_blank">Preview</a><a href="product.html?id=${product.id}" class="product-btn btn-buy">Buy Now</a>
 </div>
 </div>
 </div>`;
