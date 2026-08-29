@@ -1,1 +1,38 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing Page Startup — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:15px Arial;text-align:center}.wrap{max-width:900px;margin:auto;padding:70px 25px}.accent{color:#10B981}.btn{display:inline-block;padding:14px 22px;border-radius:8px;background:#10B981;color:#071a2f;text-decoration:none;font-weight:bold;margin:8px}.card{background:#132F52;border:1px solid #1E3A5F;border-radius:14px;padding:25px;margin-top:30px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:650px){.features{grid-template-columns:1fr}}</style></head><body><main class="wrap"><p class="accent">Launch faster</p><h1>Landing Page Startup</h1><p>Turn your startup idea into a polished product launch page.</p><a class="btn" href="#">Get Started</a><a class="btn" href="#">View Pricing</a><div class="features"><div class="card"><h3>Fast</h3><p>Optimized layout.</p></div><div class="card"><h3>Modern</h3><p>Premium interface.</p></div><div class="card"><h3>Responsive</h3><p>Works on every screen.</p></div></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;min-height:100vh}
+.hero{text-align:center;padding:100px 20px 60px}
+.hero h1{font-size:40px;margin-bottom:16px}
+.hero p{color:#94A3B8;font-size:16px;margin-bottom:24px}
+.btn{background:#10B981;color:#fff;border:none;padding:14px 28px;border-radius:8px;font-weight:600;font-size:16px;cursor:pointer}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px;max-width:900px;margin:0 auto}
+.feat{background:#0F2847;border:1px solid #1E3A5F;border-radius:12px;padding:24px;text-align:center}
+.feat h3{font-size:16px;margin-bottom:8px;color:#10B981}
+.feat p{color:#94A3B8;font-size:13px}
+.pricing{text-align:center;padding:40px 20px}
+.pricing h2{font-size:28px;margin-bottom:24px}
+.price-box{display:inline-block;background:#0F2847;border:1px solid #10B981;border-radius:12px;padding:32px}
+.price-box h3{font-size:20px;margin-bottom:8px}
+.price-box p{font-size:36px;color:#10B981;font-weight:700}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){.features{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="hero"><h1>Startup Landing</h1><p>Build and launch faster with our platform</p><button class="btn">Get Started</button></div>
+<div class="features">
+<div class="feat"><h3>Fast</h3><p>Lightning fast performance</p></div>
+<div class="feat"><h3>Secure</h3><p>Enterprise-grade security</p></div>
+<div class="feat"><h3>Scalable</h3><p>Grow without limits</p></div>
+</div>
+<div class="pricing"><h2>Pricing</h2><div class="price-box"><h3>Pro Plan</h3><p>$29/mo</p></div></div>
+</body>
+</html>
