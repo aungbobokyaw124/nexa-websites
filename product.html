@@ -14,18 +14,15 @@
 <div class="container nav-container">
 <a href="index.html" class="logo"><img src="logo.svg" alt="neXa" class="logo-img"></a>
 <div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
 <a href="templates.html">Templates</a>
 <a href="free.html">Free</a>
 <a href="new.html">New</a>
 <a href="popular.html">Popular</a>
 <a href="blog.html">Blog</a>
 </div>
-<div class="nav-actions">
-<a href="login.html" class="get-started-btn">Login</a>
-</div>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-<span></span><span></span><span></span>
-</button>
+<div class="nav-actions"><a href="login.html" class="get-started-btn">Login</a></div>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div>
 </nav>
 
@@ -40,7 +37,7 @@
 <div class="footer-grid">
 <div class="footer-brand"><img src="logo.svg" alt="neXa" class="footer-logo"><p>Digital Templates. Built to Launch.</p></div>
 <div class="footer-links"><h4>Marketplace</h4><a href="templates.html">Templates</a><a href="new.html">New</a><a href="popular.html">Popular</a><a href="free.html">Free</a></div>
-<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+<div class="footer-links"><h4>Resources</h4><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a></div>
 <div class="footer-links"><h4>Account</h4><a href="login.html">Login</a><a href="signup.html">Sign Up</a></div>
 </div>
 <div class="footer-bottom"><p>&copy; 2026 neXa. All rights reserved.</p></div>
@@ -56,7 +53,7 @@ try{
 const response=await fetch('product.json');
 const products=await response.json();
 const product=products.find(p=>p.id==id);
-if(product){renderProduct(product)}else{document.getElementById('productDetail').innerHTML='<p style="color:var(--text-secondary);">Product not found.</p>'}
+if(product){renderProduct(product)}else{document.getElementById('productDetail').innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:40px;">Product not found.</p>'}
 }catch(e){console.log('Loading...')}
 }
 function renderProduct(p){
@@ -69,8 +66,7 @@ const tags=p.tags?p.tags.map(t=>`<span class="tech-tag">#${t}</span>`).join(''):
 document.getElementById('productDetail').innerHTML=`
 <div class="product-detail-grid">
 <div class="product-gallery">
-<img src="${p.thumbnail}" alt="${p.name}" class="product-main-img" onerror="this.src='images/placeholder.jpg'">
-${p.gallery&&p.gallery.length>1?`<div class="product-thumbs">${p.gallery.map(g=>`<img src="${g}" class="thumb" onerror="this.src='images/placeholder.jpg'">`).join('')}</div>`:''}
+<img src="${p.thumbnail}" alt="${p.name}" class="product-main-img" loading="lazy">
 </div>
 <div class="product-info">
 ${badge}
@@ -87,7 +83,6 @@ ${badge}
 <div class="product-actions">
 <a href="${p.demoUrl}" class="btn-secondary" target="_blank">Live Preview</a>
 <a href="login.html" class="btn-primary">Buy Now</a>
-<a href="login.html" class="btn-secondary">Add to Cart</a>
 </div>
 </div>
 </div>
