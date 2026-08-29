@@ -1,1 +1,35 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blog Magazine — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:15px Arial}.wrap{max-width:1050px;margin:auto;padding:30px}.accent{color:#10B981}.grid{display:grid;grid-template-columns:2fr 1fr;gap:22px}.card{background:#132F52;border:1px solid #1E3A5F;border-radius:14px;padding:20px;margin-bottom:16px}.cover{height:220px;background:#0F2847;border-radius:10px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap"><header><h2>neXa Magazine</h2><p class="accent">Technology • Design • AI</p></header><div class="grid"><section><div class="card"><div class="cover"></div><h1>Building Better Digital Products</h1><p>Featured article with modern editorial layout.</p></div><div class="card"><h2>Latest Stories</h2><p>Design systems and scalable interfaces</p><p>AI tools for creators</p></div></section><aside class="card"><h3>Categories</h3><p>Technology</p><p>Design</p><p>AI</p><p>Business</p></aside></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;min-height:100vh}
+.header{text-align:center;padding:60px 20px 30px}
+.header h1{font-size:32px;color:#10B981;margin-bottom:8px}
+.header p{color:#94A3B8}
+.featured{background:#0F2847;border:1px solid #1E3A5F;border-radius:12px;padding:40px;margin:0 24px 24px;text-align:center}
+.featured h2{font-size:20px;margin-bottom:8px}
+.featured p{color:#94A3B8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 24px 40px}
+.post{background:#0F2847;border:1px solid #1E3A5F;border-radius:12px;padding:20px}
+.post h3{font-size:14px;margin-bottom:8px}
+.post p{color:#94A3B8;font-size:12px}
+.badge{position:fixed;top:16px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="header"><h1>Blog Magazine</h1><p>Latest articles and insights</p></div>
+<div class="featured"><h2>Featured Post Title</h2><p>Short description of the featured article</p></div>
+<div class="grid">
+<div class="post"><h3>Post Title</h3><p>Short description</p></div>
+<div class="post"><h3>Post Title</h3><p>Short description</p></div>
+<div class="post"><h3>Post Title</h3><p>Short description</p></div>
+</div>
+</body>
+</html>
