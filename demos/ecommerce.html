@@ -1,1 +1,36 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E-commerce Storefront — Demo</title><style>body{margin:0;background:#0B1F3A;color:#fff;font:14px Arial}header{padding:20px 5%;border-bottom:1px solid #1E3A5F;display:flex;justify-content:space-between}.wrap{padding:30px 5%}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.p{background:#132F52;border:1px solid #1E3A5F;border-radius:14px;padding:20px}.box{height:140px;background:#0F2847;border-radius:10px}.price{color:#10B981;font-size:20px;font-weight:bold}@media(max-width:700px){.products{grid-template-columns:1fr 1fr}}@media(max-width:450px){.products{grid-template-columns:1fr}}</style></head><body><header><b>neXa Store</b><span>Shop &nbsp; Cart (2)</span></header><main class="wrap"><h1>E-commerce Storefront</h1><p>Modern product grid, cart and checkout experience.</p><div class="products"><div class="p"><div class="box"></div><h3>Premium Product</h3><p>Modern digital product</p><span class="price">$29</span></div><div class="p"><div class="box"></div><h3>Starter Product</h3><p>Simple and useful</p><span class="price">$19</span></div><div class="p"><div class="box"></div><h3>Pro Product</h3><p>Advanced package</p><span class="price">$49</span></div></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-commerce Demo — neXa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B1F3A;color:#fff;font-family:'Inter',sans-serif;min-height:100vh}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#0F2847;border-bottom:1px solid #1E3A5F}
+.nav h1{font-size:18px;color:#10B981}
+.nav button{background:#10B981;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:24px}
+.card{background:#0F2847;border:1px solid #1E3A5F;border-radius:12px;overflow:hidden}
+.card .img{height:140px;background:#132F52;display:flex;align-items:center;justify-content:center;color:#10B981;font-size:32px}
+.card .body{padding:16px}
+.card h3{font-size:14px;margin-bottom:8px}
+.card p{color:#94A3B8;font-size:12px;margin-bottom:8px}
+.card .price{color:#10B981;font-weight:700;font-size:16px}
+.badge{position:fixed;top:80px;right:16px;background:rgba(16,185,129,.15);border:1px solid #10B981;color:#10B981;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600}
+@media(max-width:768px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="badge">Template Demo</div>
+<div class="nav"><h1>Store</h1><button>Cart (0)</button></div>
+<div class="grid">
+<div class="card"><div class="img">📦</div><div class="body"><h3>Product Name</h3><p>Short description</p><p class="price">$29</p></div></div>
+<div class="card"><div class="img">📦</div><div class="body"><h3>Product Name</h3><p>Short description</p><p class="price">$19</p></div></div>
+<div class="card"><div class="img">📦</div><div class="body"><h3>Product Name</h3><p>Short description</p><p class="price">$39</p></div></div>
+<div class="card"><div class="img">📦</div><div class="body"><h3>Product Name</h3><p>Short description</p><p class="price">$49</p></div></div>
+</div>
+</body>
+</html>
